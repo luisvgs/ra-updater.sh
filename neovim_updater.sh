@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 if ! [ -x "$(command -v rust-analyzer)" ]; then
-    printf"\n${RED}Rust analyzer binary not found\n"
+    printf "\n${RED}Rust analyzer binary not found\n"
 fi
 
 update_ra() {
@@ -25,10 +25,10 @@ update_ra() {
 
 SHOW_PROMPT=1
 while [ $SHOW_PROMPT -gt 0 ]; do
-    read -p "Update rust-analyzer version? [y/n]" yn
+    read -p "Update rust-analyzer version? [y/n]\n" yn
     case $yn in
 	[Yy]* ) update_ra; break;;
-	[Nn]* ) echo "No!!"; exit;;
+	[Nn]* ) echo "Updating process stopped."; exit;;
 	* ) echo "Bitch say yes or no";;
     esac
 done
